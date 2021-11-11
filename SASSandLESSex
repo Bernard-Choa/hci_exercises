@@ -1,0 +1,104 @@
+SCSS
+@mixin normal-text($size) {
+    font-family: "Gabriola";
+    color: white;
+    font-size: $size;
+}
+
+.big-words h2 {
+    @include normal-text(70px);
+    margin-top: 350px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    @include normal-text(51px);
+    border-bottom: 2px solid #dee7ec;
+    margin-bottom: 60px;
+}
+
+.contents-item p {
+    @include normal-text(33px);
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.contact-form p {
+    @include normal-text(24px);
+}
+
+@function summation($nums) {
+    $ttl: 0;
+    @each num in nums {
+        $ttl: $ttl + $num;
+    }
+    @return $ttl;
+}
+
+
+
+SASS
+@mixin normal-text($size)
+    font-family: "Gabriola"
+    color: white
+    font-size: $size
+
+.big-words h2
+    @include normal-text(70px)
+    margin-top: 350px
+    margin-bottom: 50px
+
+.section-title
+    @include normal-text(51px)
+    border-bottom: 2px solid #dee7ec
+    margin-bottom: 60px
+
+.contents-item p
+    @include normal-text(33px)
+    font-weight: bold
+    margin-top: 30px
+
+.contact-form p
+    @include normal-text(24px)
+
+@function summation($nums)
+    $ttl: 0
+    @each num in nums
+        $ttl: $ttl + $num
+    @return $ttl
+
+
+LESS
+.normal-text(@size) {
+    font-family: "Gabriola";
+    color: white;
+    font-size: @size;
+}
+
+.normal-text(@size) when (size >= 80px) {
+    font-family: "Gabriola";
+    color: yellow;
+    font-size: @size;
+}
+
+.big-words h2 {
+    normal-text(70px)
+    margin-top: 350px
+    margin-bottom: 50px
+}
+
+.section-title {
+    normal-text(51px)
+    border-bottom: 2px solid #dee7ec
+    margin-bottom: 60px
+}
+
+.contents-item p {
+    normal-text(33px)
+    font-weight: bold
+    margin-top: 30px
+}
+
+.contact-form p {
+    normal-text(24px)
+}
